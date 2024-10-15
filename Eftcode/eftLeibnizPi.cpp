@@ -7,7 +7,9 @@
 // 莱布尼茨公式计算π (EFT方法)
 double EFTLeibnizPi(int n) {
     double sum = 0.0, error = 0.0;
+    // 使用for循环迭代n次，计算莱布尼茨公式的每一项
     for (int i = 0; i < n; i++) {
+        // 计算当前项的值，使用(-1)^i来交替正负，分母为(2*i + 1)
         double term = pow(-1.0, i) / (2.0 * i + 1.0);
         EFTAdd(sum, term, &sum);
     }
